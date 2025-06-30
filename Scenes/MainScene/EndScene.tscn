@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://b274fknmcvefc"]
+
+[ext_resource type="Script" uid="uid://kknceq7koo8d" path="res://Scenes/MainScene/end_scene.gd" id="1_d0nvs"]
+[ext_resource type="Texture2D" uid="uid://28tm8af4ho5g" path="res://Textures/Background/whimsical-cartoon-rainbow-illustration_1394169-5591-Picsart-AiImageEnhancer.png" id="1_tmygs"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d0nvs")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.0
+offset_top = 33.0
+offset_right = 287.0
+offset_bottom = 134.0
+grow_horizontal = 2
+
+[node name="Label" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_right = 572.0
+offset_bottom = 105.0
+theme_override_font_sizes/normal_font_size = 67
+bbcode_enabled = true
+text = "     Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 124.0
+offset_right = 572.0
+offset_bottom = 229.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 71
+text = "TextIFYouWorL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 250.0
+offset_right = 545.0
+offset_bottom = 347.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 46
+text = "TextIFYouWorL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 106.0
+offset_right = 160.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ReturnBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return"
+
+[node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 462)
+rotation = 3.14156
+scale = Vector2(0.96845, 0.749231)
+texture = ExtResource("1_tmygs")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReturnBtn" to="." method="_on_return_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

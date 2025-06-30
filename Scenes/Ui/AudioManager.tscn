@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://csa1i357yx01h"]
+
+[ext_resource type="AudioStream" uid="uid://dryl7pkg152wp" path="res://Music/246287_afleetingspeck_guitar-snare-mid-hit (mp3cut.net).mp3" id="1_na3g2"]
+[ext_resource type="Script" uid="uid://d0xrt02ni8d8g" path="res://Scenes/Ui/audio_manager.gd" id="1_nvjxd"]
+[ext_resource type="AudioStream" uid="uid://dvahmpxcucp00" path="res://Music/786210_ar_heo_video-game-shoot (mp3cut.net).mp3" id="2_nvjxd"]
+[ext_resource type="AudioStream" uid="uid://cobiipgw83yvd" path="res://Music/melee sound.wav" id="3_gnecg"]
+[ext_resource type="AudioStream" uid="uid://mcqv02fj0h25" path="res://Music/RainbowRush_loop.ogg" id="3_xxyu3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nvjxd")
+
+[node name="CrashSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_na3g2")
+volume_db = -9.905
+
+[node name="BookSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gnecg")
+volume_db = -26.743
+pitch_scale = 0.81
+
+[node name="LoopMadeSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_nvjxd")
+volume_db = -10.895
+pitch_scale = 0.7
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xxyu3")
+volume_db = -30.0

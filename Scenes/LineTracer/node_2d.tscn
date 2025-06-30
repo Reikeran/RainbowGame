@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvvf8whnn8ymh"]
+
+[ext_resource type="Script" uid="uid://d2bpanafcwgtt" path="res://Scenes/LineTracer/node_2d.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://d14iojnspgy44" path="res://Textures/Rainbow/colourful-rainbow-gradient-background_1308-77977.jpg" id="2_0e48y"]
+
+[sub_resource type="Curve" id="Curve_5ttvt"]
+_data = [Vector2(0.0957447, 0.483146), 0.0, 0.372769, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_wtcfe"]
+offsets = PackedFloat32Array(0, 0.12)
+colors = PackedColorArray(0.439216, 0.439216, 0.439216, 0, 1, 1, 1, 0.531)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5ttvt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ttvt"]
+radius = 20.025
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wtcfe")
+MaxHp = 100.0
+DistanceBetweeenPoints = 13.0
+MaxLineDistance = 50
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 20.0
+width_curve = SubResource("Curve_5ttvt")
+gradient = SubResource("Gradient_wtcfe")
+texture = ExtResource("2_0e48y")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_5ttvt")
+
+[node name="mouseArea" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouseArea"]
+shape = SubResource("CircleShape2D_5ttvt")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="mouseArea" to="." method="_on_mouse_area_area_entered"]

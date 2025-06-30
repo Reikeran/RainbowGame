@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu3c5ksnnnq2o"]
+
+[ext_resource type="Script" uid="uid://dvyhts0yy76i4" path="res://Scenes/Ui/control.gd" id="1_lmoxx"]
+[ext_resource type="Texture2D" uid="uid://cvqhvpn1amvn0" path="res://Textures/Background/8918181.png" id="1_ru7c1"]
+[ext_resource type="Texture2D" uid="uid://d14iojnspgy44" path="res://Textures/Rainbow/colourful-rainbow-gradient-background_1308-77977.jpg" id="2_lsqjp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lsqjp"]
+texture = ExtResource("1_ru7c1")
+texture_margin_left = 49.0
+texture_margin_top = 25.0
+expand_margin_left = 123.0
+expand_margin_top = 642.0
+expand_margin_right = 99.0
+expand_margin_bottom = 321.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru7c1"]
+bg_color = Color(0.6, 0.6, 0.6, 0.42)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lmoxx"]
+texture = ExtResource("2_lsqjp")
+
+[node name="Control" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lmoxx")
+RainbowLife = 100.0
+ScreenTime = 120
+EnemyCount = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1164.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lsqjp")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 216.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score : "
+
+[node name="HP_Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 567.0
+offset_right = 1158.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ru7c1")
+
+[node name="ProgressBar" type="ProgressBar" parent="HP_Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 15.0
+offset_right = -247.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxTexture_lmoxx")
+
+[node name="Label" type="Label" parent="HP_Panel"]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 13.0
+offset_right = 1137.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 41
+text = "Time"

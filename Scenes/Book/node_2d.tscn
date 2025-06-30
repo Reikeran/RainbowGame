@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwkuyn5jmm5ft"]
+
+[ext_resource type="Script" uid="uid://dgr7af81ux8le" path="res://Scenes/Book/node_2d.gd" id="1_1umkg"]
+[ext_resource type="Texture2D" uid="uid://1i25iy6k1eug" path="res://Textures/Obstacles/Book.png" id="1_tcvhr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1umkg"]
+radius = 10.8596
+
+[node name="Node2D" type="Area2D"]
+scale = Vector2(2.58, 2.58)
+collision_layer = 4
+script = ExtResource("1_1umkg")
+speed = 400.0
+RotationSpeed = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_tcvhr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1umkg")

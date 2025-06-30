@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dryl7pkg152wp"
+path="res://.godot/imported/246287_afleetingspeck_guitar-snare-mid-hit (mp3cut.net).mp3-e06555b4c59c20ea097448dad6b99f66.mp3str"
+
+[deps]
+
+source_file="res://Music/246287_afleetingspeck_guitar-snare-mid-hit (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/246287_afleetingspeck_guitar-snare-mid-hit (mp3cut.net).mp3-e06555b4c59c20ea097448dad6b99f66.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
