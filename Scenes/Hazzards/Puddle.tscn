@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cs02drr6tsc00"]
 
-[ext_resource type="Script" uid="uid://bgd2t48xhxu2u" path="res://Scenes/Book/puddle.gd" id="1_enl5q"]
+[ext_resource type="Script" uid="uid://bgd2t48xhxu2u" path="res://Scenes/Hazzards/puddle.gd" id="1_enl5q"]
 [ext_resource type="Texture2D" uid="uid://c5mgurtt14hhy" path="res://Textures/Obstacles/vecteezy_water-puddle-clipart-design-illustration_9391787.png" id="1_yrgou"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrgou"]

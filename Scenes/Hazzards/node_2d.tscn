@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwkuyn5jmm5ft"]
 
-[ext_resource type="Script" uid="uid://dgr7af81ux8le" path="res://Scenes/Book/node_2d.gd" id="1_1umkg"]
+[ext_resource type="Script" uid="uid://dgr7af81ux8le" path="res://Scenes/Hazzards/node_2d.gd" id="1_1umkg"]
 [ext_resource type="Texture2D" uid="uid://1i25iy6k1eug" path="res://Textures/Obstacles/Book.png" id="1_tcvhr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1umkg"]

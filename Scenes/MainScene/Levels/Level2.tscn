@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm8k3c0ah6ais"]
+
+[ext_resource type="PackedScene" uid="uid://dvvf8whnn8ymh" path="res://Scenes/LineTracer/node_2d.tscn" id="1_k5tbu"]
+[ext_resource type="Texture2D" uid="uid://bwsv3wqtoweky" path="res://Textures/Background/BG1.png" id="2_pptua"]
+[ext_resource type="PackedScene" uid="uid://bu3c5ksnnnq2o" path="res://Scenes/System/UI/control.tscn" id="3_0mchv"]
+[ext_resource type="PackedScene" uid="uid://dypm7evweg0kx" path="res://Scenes/Enemy/Student_book.tscn" id="4_02o3p"]
+
+[node name="Level" type="Node2D"]
+y_sort_enabled = true
+
+[node name="LineTracer" parent="." instance=ExtResource("1_k5tbu")]
+BaseDamage = 15.0
+
+[node name="Bg1" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(576, 355)
+scale = Vector2(0.905273, 0.905273)
+texture = ExtResource("2_pptua")
+
+[node name="Control" parent="." instance=ExtResource("3_0mchv")]
+anchors_preset = 9
+anchor_right = 0.0
+grow_horizontal = 1
+EnemyCount = 1
+
+[node name="Student" parent="." instance=ExtResource("4_02o3p")]
+position = Vector2(354, 341)
+
+[node name="Student2" parent="." instance=ExtResource("4_02o3p")]
+position = Vector2(746, 297)

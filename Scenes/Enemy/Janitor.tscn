@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c6md03dq6nlpb" path="res://Textures/Student/Janitor/hurt.png" id="3_hyd8l"]
 [ext_resource type="Texture2D" uid="uid://bpc3byp3cmfj1" path="res://Textures/Student/Janitor/idle.png" id="4_3c26t"]
 [ext_resource type="Texture2D" uid="uid://bu3svnqdsgiwx" path="res://Textures/Student/Janitor/run.png" id="5_h3f6u"]
-[ext_resource type="PackedScene" uid="uid://cs02drr6tsc00" path="res://Scenes/Book/Puddle.tscn" id="7_3c26t"]
+[ext_resource type="PackedScene" uid="uid://cs02drr6tsc00" path="res://Scenes/Hazzards/Puddle.tscn" id="7_3c26t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7w68"]
 atlas = ExtResource("2_yrn3d")
@@ -372,16 +372,14 @@ animations = [{
 script = ExtResource("2_hyd8l")
 Puddle = ExtResource("7_3c26t")
 AttackDelay = 1.0
-MoveIntervalMin = 3.0
-MoveIntervalMax = 5.0
+MoveIntervalMin = 4.0
+MoveIntervalMax = 7.0
 MoveSpeed = 350.0
 Hp = 1100.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_7l35y")
 animation = &"Attack"
-frame = 5
-frame_progress = 1.0
 
 [node name="PuddleSpawn" type="Node2D" parent="CollisionShape2D" index="0"]
 position = Vector2(-0.5, 10)

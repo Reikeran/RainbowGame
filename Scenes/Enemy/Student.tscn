@@ -368,12 +368,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_av81t"]
-radius = 12.0
+radius = 7.01783
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qwmv"]
 texture = ExtResource("6_obc3a")
 
-[node name="Node2D" type="Area2D"]
+[node name="Node2D" type="Area2D" groups=["Enemies"]]
 scale = Vector2(2, 2)
 collision_layer = 2
 script = ExtResource("1_qsjcx")
@@ -384,12 +384,11 @@ Hp = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ujdnv")
-animation = &"Run_Up"
+animation = &"Run_Down"
 autoplay = "Run_Right"
-frame_progress = 0.738716
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 18.5)
+position = Vector2(0.5, 21.5)
 shape = SubResource("CircleShape2D_av81t")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]

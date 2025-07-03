@@ -17,13 +17,17 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Score="*res://Scenes/Ui/score.gd"
-AudioManager="*res://Scenes/Ui/AudioManager.tscn"
+AudioManager="*res://Scenes/System/AudioManager.tscn"
+LevelManager="*res://Scenes/System/Levels.tscn"
 
 [display]
 
 window/size/mode=3
 window/stretch/mode="viewport"
+
+[global_group]
+
+Enemies=""
 
 [input]
 

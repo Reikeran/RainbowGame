@@ -69,7 +69,7 @@ func _MoveAnim():
 
 func _TakeDamage(value:float):
 	Hp -= value
-	Score.ModifyScore(100)
+	LevelManager.ModifyScore(100)
 	$ProgressBar.value = $ProgressBar.max_value-Hp
 	if Hp <= 0 && !isDead:
 		isDead = true

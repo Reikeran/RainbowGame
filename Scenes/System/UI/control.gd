@@ -13,9 +13,13 @@ func _ready() -> void:
 	$HP_Panel/ProgressBar.max_value = RainbowLife
 	$HP_Panel/ProgressBar.value = RainbowLife
 	$HP_Panel/Label.text = "Time: " + str(ScreenTime)
+	EnemyCount = get_tree().get_nodes_in_group("Enemies").size()
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
-		enemy.connect("OnDeath",Callable(self,"_on_enemy_death"))
-
+		enemy.connect("OnDeath",Callable(self,"_on_student_on_death"))
+	if LevelManager.has_signal("score_changed"):
+		LevelManager.connect("score_changed", Callable(self, "_on_score_changed"))
+	UpdateScoreDisplay(LevelManager.ScoreVal)
+	
 func _process(delta: float) -> void:
 	if Endgame :
 		GameOver()
@@ -23,9 +27,8 @@ func _process(delta: float) -> void:
 	if TimeAcum >= 1 && ScreenTime > 0 :
 		TimeAcum-=1
 		ScreenTime -= 1
-		Score.ModifyScore(-50)
+		LevelManager.ModifyScore(-50)
 		$HP_Panel/Label.text = "Time: " + str(ScreenTime)
-		UpdateScoreDisplay()
 		if ScreenTime == 0:
 			Endgame = true
 
@@ -35,16 +38,18 @@ func _on_line_tracer_on_damage_taken(damage: float) -> void:
 		Endgame = true
 
 
-func UpdateScoreDisplay():
-	$Panel/Label.text = "Score: " + str(Score.ScoreVal) 
+func UpdateScoreDisplay(score: int) -> void:
+	$Panel/Label.text = "Score: " + str(score)
 
 func GameOver() :
 	get_tree().change_scene_to_file("res://Scenes/MainScene/EndScene.tscn")
 
-
+func _on_score_changed(new_score: int) -> void:
+	UpdateScoreDisplay(new_score)
+	
 func _on_student_on_death() -> void:
-	Score.ModifyScore(500)
+	LevelManager.ModifyScore(500)
 	EnemiesKilled += 1
 	if EnemiesKilled >= EnemyCount:
-		Score.WinEnabled()
+		LevelManager.WinEnabled()
 		Endgame = true

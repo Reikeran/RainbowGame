@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://csa1i357yx01h"]
 
 [ext_resource type="AudioStream" uid="uid://dryl7pkg152wp" path="res://Music/246287_afleetingspeck_guitar-snare-mid-hit (mp3cut.net).mp3" id="1_na3g2"]
-[ext_resource type="Script" uid="uid://d0xrt02ni8d8g" path="res://Scenes/Ui/audio_manager.gd" id="1_nvjxd"]
+[ext_resource type="Script" uid="uid://d0xrt02ni8d8g" path="res://Scenes/System/audio_manager.gd" id="1_nvjxd"]
 [ext_resource type="AudioStream" uid="uid://dvahmpxcucp00" path="res://Music/786210_ar_heo_video-game-shoot (mp3cut.net).mp3" id="2_nvjxd"]
 [ext_resource type="AudioStream" uid="uid://cobiipgw83yvd" path="res://Music/melee sound.wav" id="3_gnecg"]
 [ext_resource type="AudioStream" uid="uid://mcqv02fj0h25" path="res://Music/RainbowRush_loop.ogg" id="3_xxyu3"]

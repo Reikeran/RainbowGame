@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bu3c5ksnnnq2o"]
 
-[ext_resource type="Script" uid="uid://dvyhts0yy76i4" path="res://Scenes/Ui/control.gd" id="1_lmoxx"]
+[ext_resource type="Script" uid="uid://dvyhts0yy76i4" path="res://Scenes/System/UI/control.gd" id="1_lmoxx"]
 [ext_resource type="Texture2D" uid="uid://cvqhvpn1amvn0" path="res://Textures/Background/8918181.png" id="1_ru7c1"]
 [ext_resource type="Texture2D" uid="uid://d14iojnspgy44" path="res://Textures/Rainbow/colourful-rainbow-gradient-background_1308-77977.jpg" id="2_lsqjp"]
 

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://6jwvoy4gxlh4"]
+
+[ext_resource type="PackedScene" uid="uid://dvvf8whnn8ymh" path="res://Scenes/LineTracer/node_2d.tscn" id="1_gvtv8"]
+[ext_resource type="Texture2D" uid="uid://bwsv3wqtoweky" path="res://Textures/Background/BG1.png" id="2_e84yv"]
+[ext_resource type="PackedScene" uid="uid://bu3c5ksnnnq2o" path="res://Scenes/System/UI/control.tscn" id="3_xio10"]
+[ext_resource type="PackedScene" uid="uid://daq7ta30fu2ix" path="res://Scenes/Enemy/Student_Walk.tscn" id="6_f6rxi"]
+
+[node name="Level" type="Node2D"]
+y_sort_enabled = true
+
+[node name="LineTracer" parent="." instance=ExtResource("1_gvtv8")]
+BaseDamage = 15.0
+
+[node name="Bg1" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(576, 355)
+scale = Vector2(0.905273, 0.905273)
+texture = ExtResource("2_e84yv")
+
+[node name="Control" parent="." instance=ExtResource("3_xio10")]
+anchors_preset = 9
+anchor_right = 0.0
+grow_horizontal = 1
+EnemyCount = 1
+
+[node name="Node2D2" parent="." instance=ExtResource("6_f6rxi")]
+position = Vector2(530, 340)

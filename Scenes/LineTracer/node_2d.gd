@@ -9,6 +9,7 @@ var RedrawPoint: int
 var collisionVectorList : PackedVector2Array
 var Hp : float
 var DamageDone : float
+
 @export var MaxHp : float
 @export var DistanceBetweeenPoints : float
 @export var MaxLineDistance : int
@@ -18,6 +19,15 @@ func _ready() -> void:
 	Hp = MaxHp
 	LineVector = $Line2D
 	DamageDone = BaseDamage
+	
+	for enemy in get_tree().get_nodes_in_group("Enemies"):
+		if enemy.has_method("_on_line_tracer_on_polygon_created"):
+			connect("OnPolygonCreated", Callable(enemy, "_on_line_tracer_on_polygon_created"))
+	var root = get_tree().get_current_scene()
+	if root:
+		var hud = root.get_node_or_null("Control")
+		if hud and hud.has_method("_on_line_tracer_on_damage_taken"):
+			connect("OnDamageTaken", Callable(hud, "_on_line_tracer_on_damage_taken"))
 
 func _process(_delta):
 	if Input.is_action_just_pressed("MouseClickDown"):

@@ -34,7 +34,7 @@ func _Action(delta):
 	TimeAccumulator += delta
 	if TimeAccumulator >= randf_range(MoveIntervalMin,MoveIntervalMax):
 		TimeAccumulator = 0.0
-		var rand : int = randf_range(1,5)
+		var rand : int = randi_range(1,5)
 		if rand == 4:
 			call_deferred("_start_attacks")
 		else:

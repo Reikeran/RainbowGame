@@ -18,7 +18,7 @@ func _AttackAction():
 	AudioManager.PlayBookthrow()
 	await get_tree().create_timer(AttackDelay).timeout
 	isAttacking = false
-
+	TimeAccumulator += MoveIntervalMax
 
 func _Action(delta):
 	if (TargetPosition - global_position).length() == 0 && !isAttacking :

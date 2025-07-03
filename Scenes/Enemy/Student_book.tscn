@@ -1,13 +1,12 @@
-[gd_scene load_steps=64 format=3 uid="uid://dypm7evweg0kx"]
+[gd_scene load_steps=55 format=3 uid="uid://dypm7evweg0kx"]
 
 [ext_resource type="PackedScene" uid="uid://oe8vxl52vh3b" path="res://Scenes/Enemy/Student.tscn" id="1_gqsdh"]
 [ext_resource type="Script" uid="uid://cec77x5hfudgj" path="res://Scenes/Enemy/student_book.gd" id="2_gsinj"]
-[ext_resource type="PackedScene" uid="uid://dwkuyn5jmm5ft" path="res://Scenes/Book/node_2d.tscn" id="3_p3eqg"]
+[ext_resource type="PackedScene" uid="uid://dwkuyn5jmm5ft" path="res://Scenes/Hazzards/node_2d.tscn" id="3_p3eqg"]
 [ext_resource type="Texture2D" uid="uid://dw56aihdhhnie" path="res://Textures/Student/Student1/halfslash.png" id="4_qphv6"]
 [ext_resource type="Texture2D" uid="uid://cld7pot3we7v1" path="res://Textures/Student/Student1/hurt.png" id="5_h7bxt"]
 [ext_resource type="Texture2D" uid="uid://cybixdos6wj61" path="res://Textures/Student/Student1/idle.png" id="6_nn1ma"]
 [ext_resource type="Texture2D" uid="uid://cknpn1psyr36h" path="res://Textures/Student/Student1/run.png" id="7_pwg6l"]
-[ext_resource type="Texture2D" uid="uid://bu3svnqdsgiwx" path="res://Textures/Student/Janitor/run.png" id="8_mk6hp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hvorl"]
 atlas = ExtResource("4_qphv6")
@@ -159,38 +158,6 @@ region = Rect2(384, 193, 64, 63)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kwdgx"]
 atlas = ExtResource("7_pwg6l")
-region = Rect2(448, 193, 64, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_snx5v"]
-atlas = ExtResource("8_mk6hp")
-region = Rect2(0, 193, 64, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rh1je"]
-atlas = ExtResource("8_mk6hp")
-region = Rect2(64, 193, 64, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssw7u"]
-atlas = ExtResource("8_mk6hp")
-region = Rect2(128, 193, 64, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uyhe0"]
-atlas = ExtResource("8_mk6hp")
-region = Rect2(192, 193, 64, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1xg6o"]
-atlas = ExtResource("8_mk6hp")
-region = Rect2(256, 193, 64, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d25we"]
-atlas = ExtResource("8_mk6hp")
-region = Rect2(320, 193, 64, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0q56m"]
-atlas = ExtResource("8_mk6hp")
-region = Rect2(384, 193, 64, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w3s1s"]
-atlas = ExtResource("8_mk6hp")
 region = Rect2(448, 193, 64, 63)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkgnu"]
@@ -366,30 +333,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kwdgx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_snx5v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rh1je")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ssw7u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uyhe0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1xg6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d25we")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0q56m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w3s1s")
 }],
 "loop": true,
 "name": &"Run_Right",
@@ -437,5 +380,4 @@ Hp = 1000.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_5fmdu")
-animation = &"Run_Right"
-frame_progress = 0.0
+animation = &"Attack"
