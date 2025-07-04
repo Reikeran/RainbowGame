@@ -79,7 +79,7 @@ alignment = 1
 
 [node name="ReturnBtn" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Return"
+text = "Next"
 
 [node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

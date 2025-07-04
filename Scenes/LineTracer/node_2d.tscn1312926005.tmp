@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvvf8whnn8ymh"]
+[gd_scene load_steps=10 format=3 uid="uid://dvvf8whnn8ymh"]
 
 [ext_resource type="Script" uid="uid://d2bpanafcwgtt" path="res://Scenes/LineTracer/node_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://d14iojnspgy44" path="res://Textures/Rainbow/colourful-rainbow-gradient-background_1308-77977.jpg" id="2_0e48y"]
@@ -18,14 +18,10 @@ colors = PackedColorArray(0.439216, 0.439216, 0.439216, 0, 1, 1, 1, 0.531)
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ttvt"]
 radius = 13.0384
 
-[sub_resource type="Curve" id="Curve_txmba"]
-_data = [Vector2(0, 0.994681), 0.0, 0.0, 0, 0, Vector2(1, 0.0025295), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_txmba"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 1)
-metadata/_snap_count = 2
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_txmba"]
+particle_flag_disable_z = true
+initial_velocity_max = 60.4
+gravity = Vector3(0, 98, 0)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wtcfe")
@@ -54,22 +50,14 @@ script = ExtResource("3_m2f8w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mouseArea"]
 shape = SubResource("CircleShape2D_5ttvt")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="mouseArea"]
-amount = 20
+[node name="CPUParticles2D" type="GPUParticles2D" parent="mouseArea"]
+amount = 10
 texture = ExtResource("4_txmba")
-lifetime = 0.2
+lifetime = 0.3
 preprocess = 1.18
 speed_scale = 0.32
 randomness = 0.08
-lifetime_randomness = 0.34
-spread = 30.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 200.0
-initial_velocity_max = 400.0
-scale_amount_min = 0.1
-scale_amount_max = 0.1
-scale_amount_curve = SubResource("Curve_txmba")
-color_ramp = SubResource("Gradient_txmba")
+process_material = SubResource("ParticleProcessMaterial_txmba")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="mouseArea" to="." method="_on_mouse_area_area_entered"]

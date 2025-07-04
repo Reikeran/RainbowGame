@@ -1,28 +1,33 @@
-extends Area2D
-var last_mouse_pos: Vector2 = Vector2.ZERO
-var particle: GPUParticles2D
+extends Node2D
+
+@onready var particles = $CPUParticles2D
+var last_mouse_pos = Vector2.ZERO
 
 func _ready():
-	particle = $GPUParticles2D  # or preload and instance if needed
 	last_mouse_pos = get_viewport().get_mouse_position()
+	particles.emitting = false
 
-func _process(_delta):
-	var current_mouse = get_viewport().get_mouse_position()
-	var velocity = current_mouse - last_mouse_pos
+	var gradient = Gradient.new()
+	gradient.add_point(0.0, Color.RED)
+	gradient.add_point(0.2, Color.ORANGE)
+	gradient.add_point(0.3, Color.YELLOW)
+	gradient.add_point(0.4, Color.GREEN)
+	gradient.add_point(0.6, Color.BLUE)
+	gradient.add_point(1.0, Color.PURPLE)
 
-	if velocity.length() > 1:  # avoid noise
-		var direction = -velocity.normalized()  # invert direction
-		var angle = direction.angle()
+	particles.color_ramp = gradient
 
-		# Position the particle emitter at mouse position
-		particle.global_position = current_mouse
+func _process(delta):
+	var current_mouse_pos = get_viewport().get_mouse_position()
+	var mouse_velocity = current_mouse_pos - last_mouse_pos
 
-		# Rotate the particle to face opposite of motion
-		particle.rotation = angle
+	particles.global_position = current_mouse_pos
 
-		# Emit once in that direction
-		particle.emitting = false
-		particle.restart()
-		particle.emitting = true
+	if Input.is_action_pressed("MouseClickDown"):
+		if mouse_velocity.length() > 0:
+			particles.direction = -mouse_velocity.normalized()
+		particles.emitting = true
+	else:
+		particles.emitting = false
 
-	last_mouse_pos = current_mouse
+	last_mouse_pos = current_mouse_pos
