@@ -383,19 +383,20 @@ MoveSpeed = 450.0
 Hp = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_ujdnv")
 animation = &"Run_Down"
 autoplay = "Run_Right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 21.5)
+position = Vector2(0.5, 0)
 shape = SubResource("CircleShape2D_av81t")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -18.5
-offset_top = -22.5
+offset_top = -48.0
 offset_right = 18.5
-offset_bottom = -18.5
+offset_bottom = -44.0
 theme_override_styles/fill = SubResource("StyleBoxTexture_8qwmv")
 max_value = 800.0
 show_percentage = false

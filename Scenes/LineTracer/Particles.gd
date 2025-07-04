@@ -17,7 +17,7 @@ func _ready():
 
 	particles.color_ramp = gradient
 
-func _process(delta):
+func _process(_delta):
 	var current_mouse_pos = get_viewport().get_mouse_position()
 	var mouse_velocity = current_mouse_pos - last_mouse_pos
 
